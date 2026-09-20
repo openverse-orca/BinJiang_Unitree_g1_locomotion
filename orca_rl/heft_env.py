@@ -25,7 +25,7 @@ class HeftOrcaEnv:
         resolver = resolve_scene_binding(scene_cfg.pop("resolver", "g1"))
         addresses = task_cfg.get("orcagym_addresses") or ["localhost:50051"]
         if len(addresses) != 1:
-            raise ValueError("HEFT G1 + Dex3 playback supports exactly one OrcaGym address.")
+            raise ValueError("HEFT G1 playback supports exactly one OrcaGym address.")
         signature = inspect.signature(resolver)
         kwargs = {
             "orcagym_addr": addresses[0],
@@ -41,7 +41,7 @@ class HeftOrcaEnv:
             robot_config=binding.robot_config,
             render_mode="human",
             headless=False,
-            env_id="heft-g1-dex3-OrcaGym-000",
+            env_id="heft-g1-OrcaGym-000",
         )
         self.tasks.append(task)
         self.num_envs = 1

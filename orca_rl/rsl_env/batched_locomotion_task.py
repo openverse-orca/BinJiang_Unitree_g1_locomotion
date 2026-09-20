@@ -515,9 +515,9 @@ class BatchedOrcaLocomotionTask(OrcaGymLocalEnv):
     def prepare_control_buffer(self) -> np.ndarray:
         """Clear policy-owned channels while preserving all other actuator commands.
 
-        A G1 + Dex3-1 model has 43 actuators, but locomotion owns only the 29
-        body actuators.  Copying the live ctrl buffer first prevents reset and
-        policy steps from overwriting the 14 hand channels.
+        A G1 model can have hand actuators beyond the 29 body actuators
+        locomotion owns.  Copying the live ctrl buffer first prevents reset and
+        policy steps from overwriting the hand channels.
         """
 
         live_ctrl = np.asarray(getattr(self.data, "ctrl", self.ctrl), dtype=np.float64).reshape(-1)
@@ -527,7 +527,7 @@ class BatchedOrcaLocomotionTask(OrcaGymLocalEnv):
         return self.ctrl
 
     def _configure_passive_g1_hands(self) -> None:
-        """Disable Dex3 drives and stabilize its otherwise passive light links."""
+        """Disable hand drives and stabilize its otherwise passive light links."""
 
         self._passive_hand_actuator_ids = np.zeros(0, dtype=np.int64)
         self._passive_hand_dof_ids = np.zeros(0, dtype=np.int64)
@@ -555,11 +555,11 @@ class BatchedOrcaLocomotionTask(OrcaGymLocalEnv):
             actuator_ids.append(actuator_id)
             dof_ids.append(dof_id)
             qpos_ids.append(qpos_id)
-            open_qpos.append(self._dex3_open_joint_position(model, joint_id))
+            open_qpos.append(self._hand_open_joint_position(model, joint_id))
             model.actuator_gainprm[actuator_id, :] = 0.0
             model.actuator_biasprm[actuator_id, :] = 0.0
             open_target = open_qpos[-1]
-            # Keep Dex3 fully open without adding 14 hand actions to the
+            # Keep hands fully open without adding hand actions to the
             # locomotion ABI or leaving light finger links free to shake the
             # wrists.
             model.jnt_stiffness[joint_id] = max(float(model.jnt_stiffness[joint_id]), 10.0)
@@ -591,14 +591,14 @@ class BatchedOrcaLocomotionTask(OrcaGymLocalEnv):
         self._reset_passive_g1_hands()
         mujoco.mj_setConst(model, data)
         print(
-            "[orca_rl.control] G1 Dex3 passive mode: "
+            "[orca_rl.control] G1 passive hands mode: "
             f"disabled_actuators={len(actuator_ids)}, default_pose=fully_open, "
             f"contact_geoms={enabled_hand_contact_geoms}, spring>=10.0, "
             "damping>=0.3, armature>=0.002, frictionloss>=0.05"
         )
 
     @staticmethod
-    def _dex3_open_joint_position(model: mujoco.MjModel, joint_id: int) -> float:
+    def _hand_open_joint_position(model: mujoco.MjModel, joint_id: int) -> float:
         low, high = np.asarray(model.jnt_range[joint_id], dtype=np.float64)
         return float(np.clip(0.0, low, high))
 

@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "orca-heft-dex3"
+name = "orca-heft-g1"
 version = "1.0.0"
-description = "HEFT G1 + Dex3-1 playback runtime for OrcaLab."
+description = "HEFT G1 playback runtime for OrcaLab."
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [{ name = "OpenVerse Orca" }]

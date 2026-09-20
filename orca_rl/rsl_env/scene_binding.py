@@ -92,7 +92,7 @@ def resolve_g1_scene_binding(
 ) -> SceneBinding:
     desired_count = int(num_envs or min_count)
     if desired_count != 1:
-        raise ValueError("HEFT G1 + Dex3 playback supports exactly one robot.")
+        raise ValueError("HEFT G1 playback supports exactly one robot.")
     if num_envs is not None:
         min_count = desired_count
         max_count = desired_count
@@ -153,7 +153,7 @@ def _raise_if_g1_scene_has_no_actuators(report, *, asset_path: str) -> None:
     if g1_joints:
         raise RuntimeError(
             "The OrcaLab scene contains G1 joints but no motor actuators. "
-            f"Use an actuated G1 + Dex3-1 prefab; configured path={asset_path!r}."
+            f"Use an actuated G1 prefab; configured path={asset_path!r}."
         )
 
 

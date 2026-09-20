@@ -1,6 +1,6 @@
 # Task1 移动巡检导航配置
 #
-# 机器人：G1 + Dex3-1（场景中默认实体为 g1_pick）
+# 机器人：G1（场景中默认实体为 g1_pick）
 # 任务：task1_inspection（移动巡检）
 #
 # 本文件随 OrcaLocomotion 仓库分发。

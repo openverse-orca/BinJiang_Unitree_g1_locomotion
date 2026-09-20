@@ -272,7 +272,7 @@ def main() -> None:
 
     try:
         print(
-            f"[heft-task1] robot=G1+Dex3-1 envs={env.num_envs} "
+            f"[heft-task1] robot=G1 envs={env.num_envs} "
             f"remote={task_cfg['orcagym_addresses'][0]}"
         )
         dt = float(env.tasks[0].control_dt)

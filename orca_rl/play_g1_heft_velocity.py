@@ -24,7 +24,7 @@ DEFAULT_MOTION_DIR = PROJECT_ROOT / "assets/heft/recorded_commands"
 DEFAULT_WALK_MOTION_DIR = PROJECT_ROOT / "assets/heft/motions"
 
 HELP = """
-G1 + Dex3 HEFT velocity command
+G1 HEFT velocity command
 
 Move:
   W / Up / 8       forward            S / Down         backward
@@ -86,7 +86,7 @@ def main() -> None:
     try:
         print(
             "[orca_rl.heft] "
-            f"robot=G1+Dex3-1 action_dim={env.num_actions} envs={env.num_envs} "
+            f"robot=G1 action_dim={env.num_actions} envs={env.num_envs} "
             f"remote={task_cfg['orcagym_addresses'][0]}"
         )
         dt = float(env.tasks[0].control_dt)

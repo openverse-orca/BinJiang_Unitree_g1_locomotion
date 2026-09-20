@@ -178,4 +178,4 @@ HEFT 录制的 `heft_forward` 动作在 ORCA 中表现为原地踏步。本脚�
 
 本运行包内的 G1 PMG 策略和 `walk1/walk2/walk3` 动作源自 [Axellwppr/motion_tracking](https://github.com/Axellwppr/motion_tracking) 的 `sim2real` 分支，固定版本为 [`0d5ba31e33397f3543d350d98b637e26d92f470a`](https://github.com/Axellwppr/motion_tracking/commit/0d5ba31e33397f3543d350d98b637e26d92f470a)，按 MIT License 使用；Copyright (c) 2026 Axell。
 
-完整部署与排障另见 [`docs/HEFT_DEX3.md`](docs/HEFT_DEX3.md)。
+完整部署与排障另见 [`docs/HEFT_G1.md`](docs/HEFT_G1.md)。
