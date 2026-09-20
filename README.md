@@ -1,8 +1,8 @@
-# Orca HEFT G1 + Dex3-1
+# Orca HEFT G1 
 
-HEFT G1 PMG 在 OrcaLab 的专用运行包。仓库只保留 G1 + Dex3-1 播放所需的代码、ONNX 策略、动作片段、安装脚本和上游许可证。
+HEFT G1 PMG 在 OrcaLab 的专用运行包。仓库只保留 G1 播放所需的代码、ONNX 策略、动作片段、安装脚本和上游许可证。
 
-策略动作维度固定为 29，只控制 G1 本体。Dex3-1 的 14 个 actuator 不进入策略输入输出，运行时双手保持被动张开，避免手指扰动本体控制。
+策略动作维度固定为 29，只控制 G1 本体。
 
 ---
 
@@ -68,14 +68,13 @@ ORCA_HEFT_PYTHON=/path/to/python3.12 ./scripts/check_heft_install.sh --runtime
 ## 3. 启动 ORCA 并加载场景
 
 1. 打开 OrcaLab / OrcaStudio。
-2. 加载 Task1 场景，场景中需包含：
-   - 机器人实体：`g1_pick`（G1 + Dex3-1）
-   - 路点 site（按 start → checkpoint1 → checkpoint2 → end 顺序）：
-     - `Static_start_site`
-     - `Static_checkpoint1_site`
-     - `Static_checkpoint2_site`
-     - `Static_end_site`
-3. 在 ORCA 中选择「外部仿真程序」模式，确认机器人处于可控制状态。
+2. 打开仓库根目录的布局文件 [`g1_pick_layout.json`](g1_pick_layout.json)，会自动加载滨江比赛场景（含配电箱等互动资产）和 `g1_pick` 机器人。
+3. 确认场景中包含以下路点 site（按 start → checkpoint1 → checkpoint2 → end 顺序）：
+   - `Static_start_site`
+   - `Static_checkpoint1_site`
+   - `Static_checkpoint2_site`
+   - `Static_end_site`
+4. 在 ORCA 中选择「外部仿真程序」模式，确认机器人处于可控制状态。
 
 如果场景中找不到 G1 机器人，脚本会报错：
 

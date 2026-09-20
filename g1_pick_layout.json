@@ -1,0 +1,161 @@
+{
+    "version": "4.0",
+    "level": {
+        "name": "binjiang_competition_2026",
+        "path": "levels/e071469a36d3c8aa/binjiang_competition_2026/binjiang_competition_2026/binjiang_competition_2026.spawnable",
+        "package_reference": {
+            "id": "f00cbe2a-3479-4dd6-8038-4899758d9199",
+            "name": "Binjiang_Competition_2026"
+        }
+    },
+    "viewport_camera_transform": {
+        "position": [
+            16.079864501953125,
+            7.849567890167236,
+            2.0088236331939697
+        ],
+        "rotation": [
+            0.9234300330959494,
+            -0.3830324740601263,
+            0.009091781526321844,
+            -0.021918880000356203
+        ]
+    },
+    "actors": [
+        {
+            "name": "Group",
+            "path": "/Group",
+            "type": "GroupActor",
+            "transform": {
+                "position": [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "rotation": [
+                    1.0,
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "scale": 1.0
+            },
+            "children": [
+                {
+                    "name": "Interactive",
+                    "path": "/Group/Interactive",
+                    "type": "GroupActor",
+                    "transform": {
+                        "position": [
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "rotation": [
+                            1.0,
+                            0.0,
+                            0.0,
+                            0.0
+                        ],
+                        "scale": 1.0
+                    },
+                    "children": [
+                        {
+                            "name": "DistributionBox_03_Switch",
+                            "path": "/Group/Interactive/DistributionBox_03_Switch",
+                            "type": "AssetActor",
+                            "transform": {
+                                "position": [
+                                    12.017212867736816,
+                                    14.465922355651855,
+                                    1.1960357427597046
+                                ],
+                                "rotation": [
+                                    0.7071071107358423,
+                                    0.0,
+                                    0.0,
+                                    0.7071064516370992
+                                ],
+                                "scale": 1.2000000476837158
+                            },
+                            "asset_path": "assets/e071469a36d3c8aa/binjiang_competition_2026/industry_workshop_inspection/prop/distributionbox_03/distributionbox_03_switch"
+                        },
+                        {
+                            "name": "DistributionBox_02",
+                            "path": "/Group/Interactive/DistributionBox_02",
+                            "type": "AssetActor",
+                            "transform": {
+                                "position": [
+                                    11.72184944152832,
+                                    14.340660095214844,
+                                    0.0016129016876220703
+                                ],
+                                "rotation": [
+                                    0.7071071107358423,
+                                    0.0,
+                                    0.0,
+                                    0.7071064516370992
+                                ],
+                                "scale": 0.699999988079071
+                            },
+                            "asset_path": "assets/e071469a36d3c8aa/binjiang_competition_2026/industry_workshop_inspection/prop/distributionbox_02/distributionbox_02"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "g1_pick",
+            "path": "/g1_pick",
+            "type": "AssetActor",
+            "transform": {
+                "position": [
+                    15.967610359191895,
+                    8.906286239624023,
+                    0.0
+                ],
+                "rotation": [
+                    0.06388119136953499,
+                    0.0,
+                    0.0,
+                    0.9979575108135661
+                ],
+                "scale": 1.0
+            },
+            "asset_path": "assets/cae3c6559556dd4f/default_project/prefabs/g1_pick_usda",
+            "entity_overrides": [
+                {
+                    "entity_path": [],
+                    "group_overrids": [
+                        {
+                            "type_id": "{22B10178-39B6-4C12-BB37-77DB45FDD3B6}",
+                            "type_index": 0,
+                            "property_overrides": [
+                                {
+                                    "name": "translate.x",
+                                    "value": 15.967610359191895,
+                                    "type": "float"
+                                },
+                                {
+                                    "name": "rotate.z",
+                                    "value": 172.67477416992188,
+                                    "type": "float"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "package_references": [
+        {
+            "id": "f00cbe2a-3479-4dd6-8038-4899758d9199",
+            "name": "Binjiang_Competition_2026"
+        },
+        {
+            "id": "8f938f37-e756-498c-9818-13bbbcefb8ab",
+            "name": "g1_pick"
+        }
+    ]
+}
