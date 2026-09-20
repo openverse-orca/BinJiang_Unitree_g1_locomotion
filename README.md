@@ -20,7 +20,7 @@
 ### 2.1 克隆仓库
 
 ```bash
-git clone --branch master https://github.com/openverse-orca/BinJiang_Unitree_g1_locomotion.git
+git clone https://github.com/openverse-orca/BinJiang_Unitree_g1_locomotion.git
 cd BinJiang_Unitree_g1_locomotion
 ```
 

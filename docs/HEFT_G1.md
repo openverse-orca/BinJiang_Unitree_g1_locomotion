@@ -16,7 +16,7 @@
 ## 安装
 
 ```bash
-git clone --branch master <新仓库地址>
+git clone https://github.com/openverse-orca/BinJiang_Unitree_g1_locomotion
 cd BinJiang_Unitree_g1_locomotion
 conda run -n orca-loco pip install -r requirements.txt
 conda run -n orca-loco pip install --no-deps -e .
