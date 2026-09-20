@@ -1,24 +1,16 @@
 {
-    "version": "4.0",
-    "level": {
-        "name": "binjiang_competition_2026",
-        "path": "levels/e071469a36d3c8aa/binjiang_competition_2026/binjiang_competition_2026/binjiang_competition_2026.spawnable",
-        "package_reference": {
-            "id": "f00cbe2a-3479-4dd6-8038-4899758d9199",
-            "name": "Binjiang_Competition_2026"
-        }
-    },
+    "version": "3.0",
     "viewport_camera_transform": {
         "position": [
-            16.079864501953125,
-            7.849567890167236,
-            2.0088236331939697
+            18.2762393951416,
+            7.432632923126221,
+            3.676748275756836
         ],
         "rotation": [
-            0.9234300330959494,
-            -0.3830324740601263,
-            0.009091781526321844,
-            -0.021918880000356203
+            0.760175830180033,
+            -0.35377946775928404,
+            -0.22993481341139999,
+            0.49406758341700585
         ]
     },
     "actors": [
@@ -110,15 +102,15 @@
             "type": "AssetActor",
             "transform": {
                 "position": [
-                    15.967610359191895,
-                    8.906286239624023,
+                    15.0,
+                    9.0,
                     0.0
                 ],
                 "rotation": [
-                    0.06388119136953499,
                     0.0,
                     0.0,
-                    0.9979575108135661
+                    0.0,
+                    1.0
                 ],
                 "scale": 1.0
             },
@@ -133,12 +125,12 @@
                             "property_overrides": [
                                 {
                                     "name": "translate.x",
-                                    "value": 15.967610359191895,
+                                    "value": 15.0,
                                     "type": "float"
                                 },
                                 {
-                                    "name": "rotate.z",
-                                    "value": 172.67477416992188,
+                                    "name": "translate.y",
+                                    "value": 9.0,
                                     "type": "float"
                                 }
                             ]

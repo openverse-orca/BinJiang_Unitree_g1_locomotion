@@ -8,7 +8,7 @@
 - Ubuntu 22.04/24.04 x86_64（Windows 11 也可运行）
 - Python 3.12 或 3.13
 - `orca-loco` conda 环境（推荐）
-- 可运行的 OrcaLab/OrcaStudio，版本 `26.6.3`
+- 可运行的 OrcaLab/OrcaStudio，版本不低于 `26.8.2`
 - OrcaStudio 工程中可用的 G1 29DoF prefab
 
 模型、动作和依赖总体积较大，首次安装需要可访问 PyPI 和 MuJoCo Python 包源。

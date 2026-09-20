@@ -10,7 +10,7 @@
 
 - 操作系统：Windows 11 / Ubuntu 22.04 / Ubuntu 24.04
 - Python：3.12 及以上
-- OrcaLab / OrcaStudio：26.7.1（兼容 26.6.3 及以上）
+- OrcaLab / OrcaStudio：26.8.2 及以上
 - 建议：使用 `orca-loco` conda 环境
 
 ---
