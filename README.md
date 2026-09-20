@@ -1,6 +1,6 @@
 # Orca HEFT G1 
 
-HEFT G1 PMG 在 OrcaLab 的专用运行包。仓库只保留 G1 播放所需的代码、ONNX 策略、动作片段、安装脚本和上游许可证。
+本仓库用于在 OrcaLab 中运行（回放）上游 HEFT 项目训练的 G1 PMG 行走策略，仅包含推理所需的代码、ONNX 策略、动作片段与安装脚本，不包含训练部分。
 
 策略动作维度固定为 29，只控制 G1 本体。
 
@@ -20,7 +20,7 @@ HEFT G1 PMG 在 OrcaLab 的专用运行包。仓库只保留 G1 播放所需的�
 ### 2.1 克隆仓库
 
 ```bash
-git clone --branch master <新仓库地址>
+git clone --branch master https://github.com/openverse-orca/BinJiang_Unitree_g1_locomotion.git
 cd BinJiang_Unitree_g1_locomotion
 ```
 
