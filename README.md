@@ -19,29 +19,56 @@
 
 ### 2.1 克隆仓库
 
+Windows 11 与 Ubuntu 22.04 / 24.04 使用相同命令：
+
 ```bash
 git clone https://github.com/openverse-orca/BinJiang_Unitree_g1_locomotion.git
 cd BinJiang_Unitree_g1_locomotion
 ```
 
-### 2.2 安装 HEFT 运行环境
+### 2.2 创建并激活 HEFT 运行环境
 
-默认使用 `orca-loco` conda 环境（Python 3.12），首次使用需先创建：
+Windows 11 与 Ubuntu 22.04 / 24.04 均默认使用 `orca-loco` conda 环境（Python 3.12），首次使用需先创建：
 
 ```bash
 conda create -n orca-loco python=3.12 -y
-```
-
-在仓库根目录执行：
-
-```bash
 conda activate orca-loco
 ```
 
+### 2.3 安装 HEFT 运行依赖
+
+在仓库根目录执行。Windows 11 与 Ubuntu 22.04 / 24.04 使用相同命令：
+
 ```bash
-pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
-pip install --no-deps -e .
+python -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+python -m pip install --no-deps -e .
 ```
+
+### 2.4 校验安装
+
+Windows 与 Ubuntu 的校验方式不同。
+
+#### Windows 11（PowerShell / Anaconda Prompt）
+
+先检查主要运行依赖：
+
+```powershell
+python -c "import mujoco,numpy,onnxruntime,orca_gym,pynput; print('HEFT runtime dependencies OK')"
+```
+
+然后执行项目自带的 smoke test：
+
+```powershell
+python .\scripts\smoke_test_heft.py
+```
+
+正常情况下会看到类似：
+
+```text
+[HEFT smoke] ONNX 1729 -> 29 and all 50 Hz motions are valid.
+```
+
+#### Ubuntu 22.04 / 24.04（Bash）
 
 安装完成后校验资产与运行时依赖：
 
@@ -55,13 +82,44 @@ pip install --no-deps -e .
 ORCA_HEFT_PYTHON=/path/to/python3.12 ./scripts/check_heft_install.sh --runtime
 ```
 
-### 2.3 校验安装
+所有发布资产都有 SHA-256 校验。
 
-```bash
-./scripts/check_heft_install.sh --runtime
+### 2.5 运行 G1 HEFT
+
+Windows 与 Ubuntu 的启动方式不同。
+
+#### Windows 11
+
+先启动 OrcaLab / OrcaStudio，加载仓库根目录的 `g1_pick_layout.json`，并确认外部仿真服务已经启动。
+
+**PowerShell：**
+
+```powershell
+python -m orca_rl.play_g1_heft_velocity `
+  --policy ".\checkpoints\heft\G1_PMG\policy.onnx" `
+  --motion-dir ".\assets\heft\recorded_commands" `
+  --remote 127.0.0.1:50051
 ```
 
-所有发布资产都有 SHA-256 校验。
+**CMD：**
+
+```cmd
+python -m orca_rl.play_g1_heft_velocity --policy ".\checkpoints\heft\G1_PMG\policy.onnx" --motion-dir ".\assets\heft\recorded_commands" --remote 127.0.0.1:50051
+```
+
+#### Ubuntu 22.04 / 24.04
+
+```bash
+./play_g1_heft.sh
+```
+
+非默认服务地址：
+
+```bash
+./play_g1_heft.sh --remote 127.0.0.1:50051
+```
+
+如果 OrcaLab / OrcaStudio 使用的不是 `127.0.0.1:50051`，请将服务地址修改为实际地址。
 
 ---
 
